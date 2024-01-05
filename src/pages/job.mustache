@@ -1,0 +1,5 @@
+app.get('/jobs/:id', (req, res) => {
+    const id = req.params.id;
+    const matchedJob = JOBS.find(job => job.id.toString() === id);
+    res.render('job', {job: matchedJob});
+})

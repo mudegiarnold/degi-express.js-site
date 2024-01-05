@@ -83,53 +83,21 @@
 
             <!--JOBS LIST-->
             <div class="d-md-none">
+
+                {{#jobs}}
                 <div class="card mb-3">
                     <div class="card-body">
-                        <h5 class="card-title">Frontend Developer</h5>
+                        <h5 class="card-title"><a href="/jobs/{{id}}">{{title}}</a></h5>
                         <h6 class="card-subtitle my-1 text-body-secondary">
-                            Anywhere,Remote . $80,000 
+                            {{location}} . {{salary}}
                         </h6>
                         <small class="card-text text-body-secondary">
-                            Updated Jan 17, 2023
+                            Updated {{updated}}
                         </small>
                     </div>
                 </div>
+                {{/jobs}}
 
-                <div class="card my-4">
-                    <div class="card-body">
-                        <h5 class="card-title">Full Stack Developer</h5>
-                        <h6 class="card-subtitle my-1 text-body-secondary">
-                            San Francisco,CA . $100,000
-                        </h6>
-                        <small class="card-text text-body-secondary">
-                            Updated Feb 20, 2023
-                        </small>
-                    </div>
-                </div>
-
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Data Scientist</h5>
-                        <h6 class="card-subtitle my-1 text-body-secondary">
-                            San Francisco,CA . $175,000
-                        </h6>
-                        <small class="card-text text-body-secondary">
-                            Upadated Mar 12, 2023
-                        </small>
-                    </div>
-                </div>
-
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">ML Engineer</h5>
-                        <h6 class="card-subtitle my-1 text-body-secondary">
-                            Remote . $80,000
-                        </h6>
-                        <small class="card-text text-body-secondary">
-                            Updated Apr 20, 2023
-                        </small>
-                    </div>
-                </div>
             </div>
 
             <!--JOBS TABLE-->
@@ -141,37 +109,16 @@
                         <th rowspan="2">Salary</th>
                         <th rowspan="2">Updated</th>
                     </tr>
-                    <tr class="table-primary text-center">
-                        <th>City</th>
-                        <th>Country</th>
+
+                    {{#jobs}}
+                    <tr>
+                        <td><a href="/jobs/{{id}}">{{title}}</a></td>
+                        <td>{{location}}</td>
+                        <td>{{salary}}</td>
+                        <td>{{updated}}</td>
                     </tr>
-                    <tr class="jobs-data-row">
-                        <td>Frontend Developer</td>
-                        <td>Anywhere</td>
-                        <td>Remote</td>
-                        <td>$80,000</td>
-                        <td>Jan 17, 2023</td>
-                    </tr>
-                    <tr class="jobs-data-row">
-                        <td>Full Stack Developer</td>
-                        <td>San Francisco</td>
-                        <td>CA</td>
-                        <td>$100,000</td>
-                        <td>Jan 22, 2023</td>
-                    </tr>
-                    <tr class="jobs-data-row">
-                        <td>Data Scientist</td>
-                        <td>New York</td>
-                        <td>NY</td>
-                        <td>$110,000</td>
-                        <td>Jan 19, 2023</td>
-                    </tr>
-                    <tr class="jobs-data-row">
-                        <td>ML Engineer</td>
-                        <td colspan="2">Seattle</td>
-                        <td>$130,000</td>
-                        <td>Jan 23, 2023</td>
-                    </tr>
+                    {{/jobs}}
+
                 </table>
             </div>
         </div>
